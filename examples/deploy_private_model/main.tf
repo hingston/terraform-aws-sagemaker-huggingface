@@ -11,7 +11,7 @@
 
 module "huggingface_sagemaker" {
   source = "../../"
-  name_prefix              = "deploy-hub"
+  name_prefix              = "deploy-private-hub"
   pytorch_version          = "1.9.1"
   transformers_version     = "4.12.3"
   instance_type            = "ml.g4dn.xlarge"
