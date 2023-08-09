@@ -267,8 +267,11 @@ resource "aws_appautoscaling_policy" "sagemaker_policy" {
   service_namespace  = aws_appautoscaling_target.sagemaker_target[0].service_namespace
 
   target_tracking_scaling_policy_configuration {
-    predefined_metric_specification {
+    customized_metric_specification {
       predefined_metric_type = "ApproximateBacklogSizePerInstance"
+      metric_name            = "AWS/SageMaker"
+      namespace              = [{"Name": "EndpointName", "Value": endpoint_name}]
+      statistic              = "Average"
     }
     target_value       = var.autoscaling.scaling_target_invocations
     scale_in_cooldown  = var.autoscaling.scale_in_cooldown
