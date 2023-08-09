@@ -271,7 +271,7 @@ resource "aws_appautoscaling_policy" "sagemaker_policy" {
       metric_name = "ApproximateBacklogSizePerInstance"
       namespace   = "AWS/SageMaker"
       statistic   = "Average"
-      dimensions  = {
+      dimensions {
         name = "EndpointName"
         value = aws_sagemaker_endpoint.huggingface.name
       }
