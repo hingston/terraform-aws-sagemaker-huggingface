@@ -270,7 +270,7 @@ resource "aws_appautoscaling_policy" "sagemaker_policy" {
     customized_metric_specification {
       predefined_metric_type = "ApproximateBacklogSizePerInstance"
       metric_name            = "AWS/SageMaker"
-      namespace              = [{"Name": "EndpointName", "Value": endpoint_name}]
+      namespace              = [{"Name": "EndpointName", "Value": async_endpoint_name}]
       statistic              = "Average"
     }
     target_value       = var.autoscaling.scaling_target_invocations
