@@ -268,7 +268,7 @@ resource "aws_appautoscaling_policy" "sagemaker_policy" {
 
   target_tracking_scaling_policy_configuration {
     predefined_metric_specification {
-      predefined_metric_type = "SageMakerVariantInvocationsPerInstance"
+      predefined_metric_type = "ApproximateBacklogSizePerInstance"
     }
     target_value       = var.autoscaling.scaling_target_invocations
     scale_in_cooldown  = var.autoscaling.scale_in_cooldown
