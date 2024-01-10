@@ -250,7 +250,7 @@ locals {
 }
 
 resource "aws_appautoscaling_target" "sagemaker_target" {
-  count              = local.use_autoscaling
+  count              = 1
   min_capacity       = var.autoscaling.min_capacity
   max_capacity       = var.autoscaling.max_capacity
   resource_id        = "endpoint/${aws_sagemaker_endpoint.huggingface.name}/variant/AllTraffic"
