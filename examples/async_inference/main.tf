@@ -24,8 +24,7 @@ module "huggingface_sagemaker" {
   async_config = {
     # needs to be a s3 uri
     s3_output_path = "s3://async-inference-bucket/async-distilbert"
-    # (Optional) specify Amazon SNS topics, S3 failure path and custom KMS Key
-    # s3_failure_path   = "s3://async-inference-bucket/failed-inference"
+    # (Optional) specify Amazon SNS topics and custom KMS Key
     # kms_key_id        = "string"
     # sns_error_topic   = "arn:aws:sns:aws-region:account-id:topic-name"
     # sns_success_topic = "arn:aws:sns:aws-region:account-id:topic-name"
